@@ -100,13 +100,17 @@ class DialView : View, View.OnClickListener {
     }
 
     override fun onClick(p0: View?) {
+        // Rotate selection to the next valid choice
         activeSelection = (activeSelection + 1) % SELECTION_COUNT
+
+        // Set dial background color to green if selection is >= 1
         if (activeSelection >= 1) {
             dialPaint.color = Color.GREEN
         } else {
             dialPaint.color = Color.GRAY
         }
 
+        // Redraw the view
         invalidate()
     }
 }
